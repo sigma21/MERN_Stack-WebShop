@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import ProductList from "../components/Index/ProductList"
+
 
 function Home({ products }) {
   //useEffect hook is used as a side effect, when sth is done outside this function & get used inside
@@ -13,9 +15,8 @@ function Home({ products }) {
   //   console.log(response.data);
   // }
 
-  console.log(products);
 
-  return <>home</>;
+  return <ProductList products={products}/>
 }
 
 //with below function we are fetching the json data in the server instead of client
