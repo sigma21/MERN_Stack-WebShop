@@ -13,21 +13,19 @@ function Home({ products }) {
   //   console.log(response.data);
   // }
 
-  console.log(products)
+  console.log(products);
 
   return <>home</>;
-
 }
 
 //with below function we are fetching the json data in the server instead of client
 Home.getInitialProps = async () => {
   //fetch data on the server
-  const url="http://localhost:3000/api/products";
+  const url = "http://localhost:3000/api/products";
   const response = await axios.get(url);
   //return response data as an object(because props is an object)
   //this object will be merged with the existing props (if there is any)
-  return { products: response.data }
-
-}
+  return { products: response.data };
+};
 
 export default Home;
