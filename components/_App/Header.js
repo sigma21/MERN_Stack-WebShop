@@ -11,7 +11,7 @@ Router.onRouteChangeError = () => NProgress.done() // in case there is an error 
 
 function Header() {
   const router = useRouter(); //gives us an object with pathname etc.
-  const user = false; //dummy data to determine which tabs will be displayed within the header
+  const user = true; //dummy data to determine which tabs will be displayed within the header
 
   //helper function to determine the path
   function isActive(route) {
