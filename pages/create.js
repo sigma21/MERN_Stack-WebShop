@@ -59,6 +59,7 @@ function CreateProduct() {
     try {
       event.preventDefault(); //prevent refreshing page on submit
       setLoading(true);
+      setError("");
       const mediaUrl = await handleImageUpload();
       const url = `${baseUrl}/api/product`;
       const { name, price, description } = product;
