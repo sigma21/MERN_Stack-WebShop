@@ -2,16 +2,19 @@ import { Menu, Container, Image, Icon } from "semantic-ui-react";
 import Link from "next/link";
 import Router, { useRouter } from "next/router"; //to detect the route we are in
 import NProgress from "nprogress"; //to display a progress bar above header when changing routes
-
+import { handleLogout } from "../../utils/auth"
 //timing the progress bar from the beginning of the click till the new route
 Router.onRouteChangeStart = () => NProgress.start() 
 Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done() // in case there is an error with the destination route
 
 
-function Header() {
+function Header({user}) {
   const router = useRouter(); //gives us an object with pathname etc.
-  const user = false; //dummy data to determine which tabs will be displayed within the header
+  const isRoot = user && user.role === "root";
+  const isAdmin = user && user.role === "admin";
+  const isRootOrAdmin = isRoot || isAdmin
+
 
   //helper function to determine the path
   function isActive(route) {
@@ -39,7 +42,7 @@ function Header() {
           </Menu.Item>
         </Link>
 
-        {user && (
+        {isRootOrAdmin && (
           <Link href="/create">
             <Menu.Item header active={isActive("/create")}>
               <Icon name="add square" size="large"></Icon>
@@ -57,7 +60,7 @@ function Header() {
               </Menu.Item>
             </Link>
 
-            <Menu.Item header>
+            <Menu.Item onClick={handleLogout} header>
               <Icon name="sign out" size="large"></Icon>
               Logout
             </Menu.Item>
