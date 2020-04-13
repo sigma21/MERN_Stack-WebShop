@@ -6,14 +6,14 @@ import baseUrl from "../utils/baseUrl";
 function Product({ product, user }) {
   return (
     <>
-      <ProductSummary {...product} />
+      <ProductSummary user={user} {...product} />
       <ProductAttributes user={user} {...product} />
     </>
   );
 }
 
 Product.getInitialProps = async ({ query: { _id } }) => {
-  //ctx nan object gives details about route etc.
+  //ctx object gives details about route etc.
   const url = `${baseUrl}/api/product`;
   const payload = { params: { _id } };
   const response = await axios.get(url, payload);

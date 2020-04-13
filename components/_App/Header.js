@@ -31,7 +31,7 @@ function Header({user}) {
               src="/static/logo.svg"
               style={{ marginRight: "1em" }}
             ></Image>
-            WebShop
+            MonteCarlo WebShop
           </Menu.Item>
         </Link>
 
