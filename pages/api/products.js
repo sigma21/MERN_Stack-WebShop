@@ -1,7 +1,7 @@
 import Product from "../../models/Product";
 import connectDb from "../../utils/connectDb";
 
-connectDb();
+await connectDb();
 
 export default async (req, res) => {
   const { page, size } = req.query;
