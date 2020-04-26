@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "MERN Stack Project",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.x"
+  },
   "scripts": {
     "dev": "next",
     "start": "next start -p $PORT",
@@ -30,8 +33,5 @@
     "stripe": "^7.15.0",
     "uuid": "^3.4.0",
     "validator": "^11.1.0"
-  },
-  "engines": {
-    "node": ">=0.12"
   }
 }
