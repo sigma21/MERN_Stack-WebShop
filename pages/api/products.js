@@ -1,9 +1,10 @@
 import Product from "../../models/Product";
 import connectDb from "../../utils/connectDb";
 
-connectDb();
 
 export default async (req, res) => {
+  await connectDb();
+
   const { page, size } = req.query;
   // Convert querystring values to numbers
   const pageNum = Number(page);
