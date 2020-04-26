@@ -2,7 +2,7 @@ import Product from "../../models/Product";
 import Cart from "../../models/Cart";
 import connectDb from "../../utils/connectDb";
 
-await connectDb();
+connectDb();
 
 export default async (req, res) => {
   switch (req.method) {

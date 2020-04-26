@@ -2,7 +2,7 @@ import User from "../../models/User";
 import jwt from "jsonwebtoken";
 import connectDb from "../../utils/connectDb";
 
-await connectDb();
+connectDb();
 
 export default async (req, res) => {
   try {
