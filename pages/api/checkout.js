@@ -6,7 +6,7 @@ import Order from "../../models/Order";
 import calculateCartTotal from "../../utils/calculateCartTotal";
 import connectDb from "../../utils/connectDb";
 
-await connectDb();
+connectDb();
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
