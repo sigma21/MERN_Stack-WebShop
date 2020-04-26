@@ -1,7 +1,7 @@
 function catchErrors(error, displayError) {
   let errorMsg;
   if (error.response) {
-    // req was made and the server responded wit ha status code that is not in the range of 2xx
+    // req was made and the server responded with a status code that is not in the range of 2xx
     errorMsg = error.response.data;
     console.error("Error response: ", errorMsg);
 
