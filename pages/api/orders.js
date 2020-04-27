@@ -1,4 +1,5 @@
 import Order from "../../models/Order";
+import "../../models/Product.js";
 import jwt from "jsonwebtoken";
 import connectDb from "../../utils/connectDb";
 
