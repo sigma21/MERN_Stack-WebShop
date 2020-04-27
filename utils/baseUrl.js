@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? `https://montecarloshop.herokuapp.com/`
+    ? `https://montecarloshop.herokuapp.com`
     : `http://localhost:3000`;
 
 
