@@ -23,6 +23,14 @@ const ProductSchema = new mongoose.Schema({
   mediaUrl: {
     type: String,
     required: true
+  },
+  quantity: {
+    type: Number,
+    required: true
+  },
+  archived: {
+    type: Boolean,
+    default: 'false'
   }
 });
 

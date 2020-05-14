@@ -21,7 +21,7 @@ class MyApp extends App {
     if (!token) {
       //if user has no token then they should be restricted of navigating protected routes
       const isProtectedRoute =
-        ctx.pathname === "/account" || ctx.pathname == "/create";
+        ctx.pathname === "/account" || ctx.pathname == "/inventory";
       if (isProtectedRoute) {
         redirectUser(ctx, "/login");
       }
@@ -37,7 +37,7 @@ class MyApp extends App {
         const isAdmin = user.role === "admin";
         // if user is not admin or root, should be redirected from create page
         const isNotPermitted =
-          !(isRoot || isAdmin) && ctx.pathname === "/create";
+          !(isRoot || isAdmin) && ctx.pathname === "/inventory";
         if (isNotPermitted) {
           redirectUser(ctx, "/");
         }
