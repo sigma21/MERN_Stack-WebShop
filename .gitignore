@@ -109,3 +109,7 @@ dist
 next.config.*
 now.json
 
+#todo list for project
+todos
+
+DS_Store
